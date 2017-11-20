@@ -7,7 +7,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- *
+ * This class provides MySQL datasource to be used to connect to database.
+ * It implements singleton pattern See <a href="http://www.oodesign.com/singleton-pattern.html">Singleton Pattern</a>
  */
 public class DataSourceFactory
 {
@@ -18,7 +19,7 @@ public class DataSourceFactory
         MysqlDataSource dataSource = new MysqlDataSource();
         // TODO: make these database setting configurable by moving to properties file
         dataSource.setDatabaseName("rmsdb");
-        dataSource.setServerName("192.168.99.101");
+        dataSource.setServerName("192.168.99.100");
         dataSource.setPort(3306);
         dataSource.setUser("rms");
         dataSource.setPassword("rms");

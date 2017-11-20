@@ -28,10 +28,7 @@ public class UserDaoImpl implements UserDao
             ResultSet rs = stmt.executeQuery();
             if (rs.next())
             {
-                User user = new User();
-                user.setId(rs.getLong("id"));
-                user.setUserName(rs.getString("user_name"));
-                user.setPassword(rs.getString("password"));
+                User user = new User(rs.getLong("id"), rs.getString("user_name"), rs.getString("password"));
                 return Optional.of(user);
             }
         }
@@ -53,10 +50,7 @@ public class UserDaoImpl implements UserDao
             ResultSet rs = stmt.executeQuery("SELECT * FROM user");
             while (rs.next())
             {
-                User user = new User();
-                user.setId(rs.getLong("id"));
-                user.setUserName(rs.getString("user_name"));
-                user.setPassword(rs.getString("password"));
+                User user = new User(rs.getLong("id"), rs.getString("user_name"), rs.getString("password"));
                 result.add(user);
             }
         }
@@ -136,10 +130,7 @@ public class UserDaoImpl implements UserDao
             ResultSet rs = stmt.executeQuery();
             if (rs.next())
             {
-                User user = new User();
-                user.setId(rs.getLong("id"));
-                user.setUserName(rs.getString("user_name"));
-                user.setPassword(rs.getString("password"));
+                User user = new User(rs.getLong("id"), rs.getString("user_name"), rs.getString("password"));
                 return Optional.of(user);
             }
         }
